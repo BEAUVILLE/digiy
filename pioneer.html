@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 Offre Pionniers DIGIYLYFE - 100 Premiers</title>
+    <meta name="description" content="Rejoins les 100 premiers clients DIGIYLYFE et bénéficie du plan BUSINESS à 29,900 F/mois À VIE au lieu de 49,900 F. Économie 240,000 F/an !">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pioneer-hero {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .pioneer-hero h1 {
+            color: var(--black-bg);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pioneer-hero .subtitle {
+            color: var(--black-bg);
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .countdown {
+            background: var(--black-bg);
+            color: var(--gold-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .before-card, .after-card {
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .before-card {
+            background: var(--black-card);
+            border: 1px solid #FF5555;
+        }
+        
+        .after-card {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+            border: 2px solid var(--gold-primary);
+        }
+        
+        .price-big {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+        
+        .before-card .price-big {
+            color: #FF5555;
+            text-decoration: line-through;
+        }
+        
+        .after-card .price-big {
+            color: var(--gold-primary);
+        }
+        
+        .savings {
+            background: var(--gold-primary);
+            color: var(--black-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2rem 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-box {
+            background: var(--black-card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--gold-primary);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .urgency-box {
+            background: #FF5555;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .cta-giant {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+            color: var(--black-bg);
+            padding: 2rem 4rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: inline-block;
+            margin: 2rem 0;
+            transition: all 0.3s;
+        }
+        
+        .cta-giant:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+        }
+        
+        .guarantee-box {
+            background: var(--black-card);
+            border: 2px solid #55FF55;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .pioneer-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Simple -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">∞</span>
+                <span class="brand-name">DIGIYLYFE</span>
+            </div>
+            <a href="index.html" style="color: var(--gray-light); text-decoration: none;">← Retour accueil</a>
+        </div>
+    </nav>
+
+    <!-- Hero Offre -->
+    <section class="pioneer-hero">
+        <div class="container">
+            <div class="pioneer-badge" style="margin-bottom: 1rem;">🎁 OFFRE EXCEPTIONNELLE</div>
+            <h1>Rejoins les 100 Premiers Pionniers<br>DIGIYLYFE</h1>
+            <p class="subtitle">Plan BUSINESS à 29,900 F/mois À VIE<br>(au lieu de 49,900 F/mois)</p>
+            <div class="countdown">
+                <div style="font-size: 1rem; color: var(--gray-light); margin-bottom: 0.5rem;">Places restantes</div>
+                <span id="places-left">73</span> / 100
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparaison Prix -->
+    <section style="padding: 4rem 0; background: var(--black-bg);">
+        <div class="container">
+            <h2 class="section-title">Avant vs Après</h2>
+            
+            <div class="offer-grid">
+                <div class="before-card">
+                    <h3 style="color: #FF5555; font-size: 1.5rem;">❌ Prix Normal</h3>
+                    <div class="price-big">49,900 F</div>
+                    <div style="color: var(--gray-light);">par mois</div>
+                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--black-border);">
+                        <div style="color: #FF5555; font-size: 1.3rem; font-weight: 600;">
+                            599,880 F / an
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="after-card">
+                    <h3 style="color: var(--gold-primary); font-size: 1.5rem;">✅ Prix Pionnier À VIE</h3>
+                    <div class="price-big">29,900 F</div>
+                    <div style="color: var(--gray-light);">par mois</div>
+                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--gold-primary);">
+                        <div style="color: var(--gold-primary); font-size: 1.3rem; font-weight: 600;">
+                            358,800 F / an
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="savings">
+                🎉 ÉCONOMIE : 240,000 F / AN !<br>
+                <div style="font-size: 1.2rem; margin-top: 0.5rem;">
+                    (4,800,000 F économisés sur 20 ans)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ce qui est inclus -->
+    <section style="padding: 4rem 0; background: var(--black-card);">
+        <div class="container">
+            <h2 class="section-title">Tout ce que tu reçois</h2>
+            
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">📦</div>
+                    <h3 style="color: var(--gold-primary);">9 Modules</h3>
+                    <p>TOUS les modules DIGIYLYFE inclus</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🚗</div>
+                    <h3 style="color: var(--gold-primary);">DRIVER</h3>
+                    <p>VTC 0% commission</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🏠</div>
+                    <h3 style="color: var(--gold-primary);">LOC</h3>
+                    <p>Location vacances</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🍽️</div>
+                    <h3 style="color: var(--gold-primary);">RÉSA</h3>
+                    <p>Réservations resto</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🍴</div>
+                    <h3 style="color: var(--gold-primary);">RESTO PRO</h3>
+                    <p>Gestion complète</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">💳</div>
+                    <h3 style="color: var(--gold-primary);">POS</h3>
+                    <p>Caisse moderne</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🏗️</div>
+                    <h3 style="color: var(--gold-primary);">BUILD</h3>
+                    <p>Services construction</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🛒</div>
+                    <h3 style="color: var(--gold-primary);">MARKET</h3>
+                    <p>Marketplace e-commerce</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">💰</div>
+                    <h3 style="color: var(--gold-primary);">PAY</h3>
+                    <p>Paiement mobile</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">💼</div>
+                    <h3 style="color: var(--gold-primary);">JOBS</h3>
+                    <p>Emploi recrutement</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🎓</div>
+                    <h3 style="color: var(--gold-primary);">Formation</h3>
+                    <p>Équipe complète</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🔧</div>
+                    <h3 style="color: var(--gold-primary);">Support 24/7</h3>
+                    <p>Prioritaire dédié</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🎨</div>
+                    <h3 style="color: var(--gold-primary);">White-label</h3>
+                    <p>Branding complet</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🔗</div>
+                    <h3 style="color: var(--gold-primary);">API Access</h3>
+                    <p>Illimité</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">💼</div>
+                    <h3 style="color: var(--gold-primary);">Technico dédié</h3>
+                    <p>Expert personnel</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🚀</div>
+                    <h3 style="color: var(--gold-primary);">Setup OFFERT</h3>
+                    <p>Valeur 85,000 F</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgence -->
+    <section style="padding: 4rem 0;">
+        <div class="container">
+            <div class="urgency-box">
+                ⏰ ATTENTION : Cette offre est limitée aux 100 PREMIERS clients seulement !<br>
+                <span style="font-size: 1rem;">Une fois les 100 places prises, le prix passe à 49,900 F/mois pour toujours.</span>
+            </div>
+            
+            <div style="text-align: center; margin: 3rem 0;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Prêt à rejoindre les pionniers ?</h2>
+                <a href="https://digiy-hub.digiylyfe.com/signup?plan=pioneer" class="cta-giant">
+                    🎁 JE RÉSERVE MA PLACE MAINTENANT
+                </a>
+                <p style="color: var(--gray-dark); margin-top: 1rem;">
+                    Engagement 12 mois • Prix garanti À VIE • Setup inclus
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conditions -->
+    <section style="padding: 4rem 0; background: var(--black-card);">
+        <div class="container">
+            <h2 class="section-title">Conditions Offre Pionniers</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: var(--black-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--gold-primary); margin-bottom: 2rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">✅ Tu reçois :</h3>
+                    <ul style="list-style: none; color: var(--gray-light);">
+                        <li style="padding: 0.5rem 0;">✅ Plan BUSINESS complet (9 modules)</li>
+                        <li style="padding: 0.5rem 0;">✅ Prix 29,900 F/mois garanti À VIE</li>
+                        <li style="padding: 0.5rem 0;">✅ Setup & installation OFFERT (valeur 85,000 F)</li>
+                        <li style="padding: 0.5rem 0;">✅ Formation équipe incluse (valeur 45,000 F)</li>
+                        <li style="padding: 0.5rem 0;">✅ Support prioritaire 24/7</li>
+                        <li style="padding: 0.5rem 0;">✅ Toutes futures mises à jour gratuites</li>
+                        <li style="padding: 0.5rem 0;">✅ Ton prix ne changera JAMAIS</li>
+                    </ul>
+                </div>
+                
+                <div style="background: var(--black-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--black-border);">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 1rem;">📋 Conditions :</h3>
+                    <ul style="list-style: none; color: var(--gray-light);">
+                        <li style="padding: 0.5rem 0;">→ Engagement minimum 12 mois</li>
+                        <li style="padding: 0.5rem 0;">→ Limité aux 100 premiers clients</li>
+                        <li style="padding: 0.5rem 0;">→ Paiement mensuel automatique (Wave/Orange Money)</li>
+                        <li style="padding: 0.5rem 0;">→ Première échéance due à l'inscription</li>
+                        <li style="padding: 0.5rem 0;">→ Après 12 mois : sans engagement (mensuel)</li>
+                        <li style="padding: 0.5rem 0;">→ Prix 29,900 F garanti même si tu résil puis reviens</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantie -->
+    <section style="padding: 4rem 0;">
+        <div class="container">
+            <div class="guarantee-box">
+                <div style="text-align: center;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+                    <h2 style="color: #55FF55; font-size: 2rem; margin-bottom: 1rem;">Garantie Satisfait ou Remboursé 30 jours</h2>
+                    <p style="color: var(--gray-light); font-size: 1.1rem;">
+                        Teste DIGIYLYFE pendant 30 jours. Pas satisfait ? On te rembourse intégralement.<br>
+                        Pas de questions. Pas de conditions. Juste ton argent remboursé.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Rapide -->
+    <section style="padding: 4rem 0; background: var(--black-card);">
+        <div class="container">
+            <h2 class="section-title">Questions fréquentes</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--black-border);">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">Le prix restera vraiment à 29,900 F pour toujours ?</h3>
+                    <p style="color: var(--gray-light);">OUI. C'est notre promesse aux pionniers. Même dans 10 ans, tu paieras 29,900 F/mois. Même si le prix normal monte à 100,000 F.</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--black-border);">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">Que se passe-t-il après les 100 premiers ?</h3>
+                    <p style="color: var(--gray-light);">Le prix passe à 49,900 F/mois (prix normal). Les 100 premiers gardent 29,900 F à vie.</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--black-border);">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">C'est vraiment TOUS les modules inclus ?</h3>
+                    <p style="color: var(--gray-light);">OUI. Les 9 modules actuels + tous les futurs modules qu'on créera. Tu auras toujours accès à TOUT.</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--black-border);">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">Setup vraiment offert ?</h3>
+                    <p style="color: var(--gray-light);">OUI. Installation complète, migration données, formation équipe. Normalement facturé 85,000 F. Pour les pionniers : GRATUIT.</p>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">Je peux annuler après 12 mois ?</h3>
+                    <p style="color: var(--gray-light);">OUI. Après 12 mois, aucun engagement. Tu peux annuler quand tu veux. Et si tu reviens plus tard, tu gardes ton prix pionnier 29,900 F !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section style="padding: 4rem 0; background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), transparent);">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">
+                    Ne rate pas cette opportunité
+                </h2>
+                <p style="font-size: 1.2rem; color: var(--gray-light); margin-bottom: 2rem;">
+                    Les 100 places partent vite. Une fois remplies, cette offre disparaît pour toujours.
+                </p>
+                
+                <div style="background: var(--black-card); padding: 2rem; border-radius: 12px; margin-bottom: 2rem; border: 1px solid var(--gold-primary);">
+                    <div style="font-size: 1.5rem; color: var(--gold-primary); font-weight: 700; margin-bottom: 1rem;">
+                        Places restantes : <span id="places-left-2">73</span> / 100
+                    </div>
+                    <div style="color: var(--gray-light);">
+                        Rejoins Abdou, Baptiste, Fatou et 70 autres pionniers qui ont déjà réservé leur place
+                    </div>
+                </div>
+                
+                <a href="https://digiy-hub.digiylyfe.com/signup?plan=pioneer" class="cta-giant">
+                    🎁 OUI, JE DEVIENS PIONNIER DIGIYLYFE
+                </a>
+                
+                <p style="color: var(--gray-dark); margin-top: 2rem;">
+                    💳 Paiement sécurisé Wave / Orange Money<br>
+                    ✅ Garantie 30 jours satisfait ou remboursé<br>
+                    🔒 Données sécurisées et cryptées
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer style="background: var(--black-card); padding: 2rem 0; text-align: center; border-top: 1px solid var(--gold-primary);">
+        <div class="container">
+            <div class="footer-brand" style="justify-content: center; margin-bottom: 1rem;">
+                <span class="logo">∞</span>
+                <span class="brand-name">DIGIYLYFE</span>
+            </div>
+            <p style="color: var(--gray-dark);">L'écosystème digital africain • 0% commission • ∞ possibilités</p>
+            <div style="margin-top: 1rem;">
+                <a href="mailto:contact@digiylyfe.com" style="color: var(--gray-light); text-decoration: none; margin: 0 1rem;">contact@digiylyfe.com</a>
+                <a href="https://wa.me/221XXXXXXXXX" style="color: var(--gray-light); text-decoration: none; margin: 0 1rem;">WhatsApp Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulation compteur places restantes (à remplacer par API réelle)
+        const placesLeft = 73;
+        document.getElementById('places-left').textContent = placesLeft;
+        document.getElementById('places-left-2').textContent = placesLeft;
+        
+        // Animation scroll smooth
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
