@@ -6,6 +6,129 @@
     <title>DIGIYLYFE - L'écosystème digital africain 0% commission</title>
     <meta name="description" content="L'écosystème digital qui booste ton business. VTC, Location, Restaurant, Marketplace, Paiement. 0% commission. ∞ possibilités.">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- 🎨 Styles additionnels pour les paliers LOC & RESTO PRO -->
+    <style>
+        .tiers-section {
+            padding: 4rem 0;
+            background: radial-gradient(circle at top, #020617 0, #020617 60%);
+        }
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .tier-card {
+            background: #020617;
+            border-radius: 20px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            padding: 1.8rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .tier-card::before {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background:
+                radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.06), transparent 55%),
+                radial-gradient(circle at 100% 0, rgba(248, 113, 22, 0.16), transparent 60%);
+            opacity: 0.85;
+            pointer-events: none;
+        }
+        .tier-header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .tier-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 16px;
+            background: #030712;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+        .tier-title-block h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .tier-title-block p {
+            margin: 0.1rem 0 0;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        .tier-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            padding: 0.3rem 0.8rem;
+            background: rgba(15, 23, 42, 0.9);
+            white-space: nowrap;
+        }
+        .tier-body {
+            position: relative;
+            font-size: 0.9rem;
+        }
+        .tier-body p {
+            margin-bottom: 0.8rem;
+            opacity: 0.9;
+        }
+        .tier-table {
+            border-radius: 14px;
+            border: 1px solid rgba(51, 65, 85, 0.9);
+            overflow: hidden;
+            background: rgba(15, 23, 42, 0.95);
+        }
+        .tier-row {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            padding: 0.65rem 0.8rem;
+            border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+            align-items: center;
+            font-size: 0.82rem;
+        }
+        .tier-row:last-child {
+            border-bottom: none;
+        }
+        .tier-label {
+            opacity: 0.9;
+        }
+        .tier-price {
+            text-align: right;
+            font-weight: 700;
+            font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .tier-price span {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-left: 0.15rem;
+        }
+        .tier-hint {
+            margin-top: 0.8rem;
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+        .tier-hint strong {
+            color: #facc15;
+        }
+
+        @media (max-width: 768px) {
+            .tiers-section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -148,7 +271,7 @@
                     <div class="module-icon">🏠</div>
                     <h3 class="module-name">DIGIY LOC</h3>
                     <p class="module-desc">Location courte durée</p>
-                    <div class="module-price">9,900 F<span>/mois</span></div>
+                    <div class="module-price">À partir de 9,900 F<span>/mois</span></div>
                     <ul class="module-features">
                         <li>✅ Calendrier disponibilités</li>
                         <li>✅ Réservations en ligne</li>
@@ -179,7 +302,7 @@
                     <div class="module-icon">🍴</div>
                     <h3 class="module-name">DIGIY RESTO PRO</h3>
                     <p class="module-desc">Gestion restaurant complète</p>
-                    <div class="module-price">14,900 F<span>/mois</span></div>
+                    <div class="module-price">À partir de 9,900 F<span>/mois</span></div>
                     <ul class="module-features">
                         <li>✅ Gestion commandes multi-zones</li>
                         <li>✅ Kitchen Display System</li>
@@ -263,6 +386,98 @@
                     </ul>
                     <a href="jobs.html" class="btn-module">Découvrir JOBS →</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🧱 Tarifs détaillés DIGIY LOC & RESTO PRO (paliers) -->
+    <section class="tiers-section">
+        <div class="container">
+            <h2 class="section-title">Tarifs DIGIY LOC & DIGIY RESTO PRO</h2>
+            <p class="section-subtitle">
+                Forfaits mensuels par paliers. Tu payes selon la taille de ton activité, jamais en pourcentage sur ton chiffre.
+            </p>
+
+            <div class="tiers-grid">
+                <!-- LOC -->
+                <article class="tier-card">
+                    <div class="tier-header">
+                        <div class="tier-icon">🏠</div>
+                        <div class="tier-title-block">
+                            <h3>DIGIY LOC</h3>
+                            <p>Location courte durée • 0% commission</p>
+                        </div>
+                        <div class="tier-badge">Par nombre de logements</div>
+                    </div>
+                    <div class="tier-body">
+                        <p>Tu payes selon le nombre de biens gérés. DIGIY ne prend jamais de commission sur tes réservations.</p>
+                        <div class="tier-table">
+                            <div class="tier-row">
+                                <div class="tier-label">1 à 5 logements</div>
+                                <div class="tier-price">9 900 F<span>/mois</span></div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">6 à 9 logements</div>
+                                <div class="tier-price">15 000 F<span>/mois</span></div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">10 à 20 logements</div>
+                                <div class="tier-price">25 000 F<span>/mois</span></div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">21 à 30 logements</div>
+                                <div class="tier-price">30 000 F<span>/mois</span></div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">Plus de 30 logements</div>
+                                <div class="tier-price">50 000 F<span>/mois</span></div>
+                            </div>
+                        </div>
+                        <p class="tier-hint">
+                            <strong>0% commission :</strong> que tu encaisses 200 000 F ou 10 000 000 F, DIGIY ne touche jamais à tes loyers. Tu payes uniquement ton forfait.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- RESTO PRO -->
+                <article class="tier-card">
+                    <div class="tier-header">
+                        <div class="tier-icon">🍽️</div>
+                        <div class="tier-title-block">
+                            <h3>DIGIY RESTO PRO</h3>
+                            <p>Restaurant & réservations • 0% commission</p>
+                        </div>
+                        <div class="tier-badge">Par taille de restaurant</div>
+                    </div>
+                    <div class="tier-body">
+                        <p>Le tarif dépend de la taille de ton restaurant (tables / zones). Objectif : remplir tes tables, pas prendre sur ta marge.</p>
+                        <div class="tier-table">
+                            <div class="tier-row">
+                                <div class="tier-label">Petit resto (1 à 5 tables / 1 zone)</div>
+                                <div class="tier-price">9 900 F<span>/mois</span></div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">Resto moyen (6 à 9 tables)</div>
+                                <div class="tier-price">15 000 F<span>/mois</span></div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">Grand resto (10 à 20 tables)</div>
+                                <div class="tier-price">25 000 F<span>/mois</span></div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">Très grand resto (21 à 30 tables)</div>
+                                <div class="tier-price">30 000 F<span>/mois</span></div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">Chaîne / hôtel (+ de 30 tables)</div>
+                                <div class="tier-price">50 000 F<span>/mois</span></div>
+                            </div>
+                        </div>
+                        <p class="tier-hint">
+                            <strong>Remplissage avant commission :</strong> DIGIY t’aide à remplir, toi tu gardes 100% des additions. Le forfait est fixe, connu, maîtrisé.
+                        </p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
