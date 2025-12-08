@@ -7,7 +7,7 @@
     <meta name="description" content="L'écosystème digital qui booste ton business. VTC, Location, Restaurant, Marketplace, Paiement. 0% commission. ∞ possibilités.">
     <link rel="stylesheet" href="styles.css">
 
-    <!-- 🎨 Styles additionnels pour les paliers LOC & RESTO PRO -->
+    <!-- 🎨 Styles additionnels pour les paliers LOC & RESTO PRO + formation -->
     <style>
         .tiers-section {
             padding: 4rem 0;
@@ -121,6 +121,13 @@
         }
         .tier-hint strong {
             color: #facc15;
+        }
+
+        .small-link {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+            display: inline-block;
         }
 
         @media (max-width: 768px) {
@@ -279,6 +286,7 @@
                         <li>✅ 0% commission (vs Booking 15%)</li>
                     </ul>
                     <a href="loc.html" class="btn-module">Découvrir LOC →</a>
+                    <a href="#paliers" class="btn-module small-link">Voir les paliers LOC ↓</a>
                 </div>
 
                 <!-- RÉSA -->
@@ -310,6 +318,7 @@
                         <li>✅ Menu QR code</li>
                     </ul>
                     <a href="resto.html" class="btn-module">Découvrir RESTO →</a>
+                    <a href="#paliers" class="btn-module small-link">Voir les paliers RESTO PRO ↓</a>
                 </div>
 
                 <!-- POS -->
@@ -391,7 +400,7 @@
     </section>
 
     <!-- 🧱 Tarifs détaillés DIGIY LOC & RESTO PRO (paliers) -->
-    <section class="tiers-section">
+    <section class="tiers-section" id="paliers">
         <div class="container">
             <h2 class="section-title">Tarifs DIGIY LOC & DIGIY RESTO PRO</h2>
             <p class="section-subtitle">
@@ -482,6 +491,53 @@
         </div>
     </section>
 
+    <!-- 🧱 Formule Formation & Installation DIGIY -->
+    <section class="tiers-section" id="formation">
+        <div class="container">
+            <h2 class="section-title">Formule Formation & Installation DIGIY</h2>
+            <p class="section-subtitle">
+                On t’installe, on te forme, et ton business tourne dès le premier jour.
+            </p>
+
+            <div class="tiers-grid">
+                <article class="tier-card">
+                    <div class="tier-header">
+                        <div class="tier-icon">👨‍🏫</div>
+                        <div class="tier-title-block">
+                            <h3>Accompagnement terrain</h3>
+                            <p>Installation, formation & personnalisation</p>
+                        </div>
+                        <div class="tier-badge">Formule Formation</div>
+                    </div>
+                    <div class="tier-body">
+                        <p>On vient chez toi, on pose DIGIY dans ta maison, on forme ton équipe et on te laisse avec un outil prêt à encaisser.</p>
+                        <div class="tier-table">
+                            <div class="tier-row">
+                                <div class="tier-label">Installation & mise en service</div>
+                                <div class="tier-price">85 000 F</div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">Formation équipe (½ journée, ≤ 5 pers.)</div>
+                                <div class="tier-price">45 000 F</div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">Personnalisation (branding, visuels)</div>
+                                <div class="tier-price">65 000 F</div>
+                            </div>
+                            <div class="tier-row">
+                                <div class="tier-label">Intégration systèmes (ERP, compta…)</div>
+                                <div class="tier-price">125 000 F</div>
+                            </div>
+                        </div>
+                        <p class="tier-hint">
+                            <strong>Objectif :</strong> tu ne perds pas de temps, tu ne te prends pas la tête. DIGIY arrive, tout est prêt pour encaisser.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
@@ -561,7 +617,7 @@
                     <h3>Formation Personnalisée</h3>
                     <div class="service-price">45,000 F</div>
                     <p>1 jour formation sur site, jusqu'à 5 personnes, support 30 jours</p>
-                    <a href="services.html#formation" class="btn-service">En savoir plus →</a>
+                    <a href="#formation" class="btn-service">Voir la formule Formation →</a>
                 </div>
 
                 <div class="service-card">
@@ -569,7 +625,7 @@
                     <h3>Setup Complet</h3>
                     <div class="service-price">85,000 F</div>
                     <p>Installation, migration données, configuration, formation équipe</p>
-                    <a href="services.html#setup" class="btn-service">En savoir plus →</a>
+                    <a href="#formation" class="btn-service">Voir les détails →</a>
                 </div>
 
                 <div class="service-card">
@@ -577,7 +633,7 @@
                     <h3>Intégration Systèmes</h3>
                     <div class="service-price">125,000 F</div>
                     <p>Connexion ERP, CRM, comptabilité, sync données bidirectionnelle</p>
-                    <a href="services.html#integration" class="btn-service">En savoir plus →</a>
+                    <a href="#formation" class="btn-service">Voir l'offre intégration →</a>
                 </div>
 
                 <div class="service-card">
@@ -585,12 +641,12 @@
                     <h3>Personnalisation</h3>
                     <div class="service-price">65,000 F</div>
                     <p>Design interface sur-mesure, templates branded, workflows customs</p>
-                    <a href="services.html#personnalisation" class="btn-service">En savoir plus →</a>
+                    <a href="#formation" class="btn-service">Voir la personnalisation →</a>
                 </div>
             </div>
 
             <div class="services-cta">
-                <a href="services.html" class="btn-services-all">Voir tous les services →</a>
+                <a href="#formation" class="btn-services-all">Voir la Formule Formation complète →</a>
             </div>
         </div>
     </section>
@@ -674,7 +730,7 @@
                     <h4>Entreprise</h4>
                     <ul>
                         <li><a href="#pricing">Tarifs</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="pioneer.html">Offre Pionniers</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
