@@ -1,952 +1,814 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIGIYLYFE - L'écosystème digital africain 0% commission</title>
-    <meta name="description" content="L'écosystème digital qui booste ton business. VTC, Location, Restaurant, Marketplace, Paiement. 0% commission. ∞ possibilités.">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIGIYLYFE - L'écosystème digital africain 0% commission</title>
+  <meta name="description" content="L'écosystème digital qui booste ton business. VTC, Location, Restaurant, Marketplace, Paiement. 0% commission. ∞ possibilités.">
+  <link rel="stylesheet" href="styles.css">
 
-    <!-- 🎨 Styles additionnels pour les paliers LOC & RESTO PRO + formation -->
-    <style>
-        .tiers-section {
-            padding: 4rem 0;
-            background: radial-gradient(circle at top, #020617 0, #020617 60%);
-        }
-        .tiers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .tier-card {
-            background: #020617;
-            border-radius: 20px;
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            padding: 1.8rem 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .tier-card::before {
-            content: "";
-            position: absolute;
-            inset: -40%;
-            background:
-                radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.06), transparent 55%),
-                radial-gradient(circle at 100% 0, rgba(248, 113, 22, 0.16), transparent 60%);
-            opacity: 0.85;
-            pointer-events: none;
-        }
-        .tier-header {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        .tier-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 16px;
-            background: #030712;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-        }
-        .tier-title-block h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-        .tier-title-block p {
-            margin: 0.1rem 0 0;
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-        .tier-badge {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.6);
-            padding: 0.3rem 0.8rem;
-            background: rgba(15, 23, 42, 0.9);
-            white-space: nowrap;
-        }
-        .tier-body {
-            position: relative;
-            font-size: 0.9rem;
-        }
-        .tier-body p {
-            margin-bottom: 0.8rem;
-            opacity: 0.9;
-        }
-        .tier-table {
-            border-radius: 14px;
-            border: 1px solid rgba(51, 65, 85, 0.9);
-            overflow: hidden;
-            background: rgba(15, 23, 42, 0.95);
-        }
-        .tier-row {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            padding: 0.65rem 0.8rem;
-            border-bottom: 1px solid rgba(31, 41, 55, 0.9);
-            align-items: center;
-            font-size: 0.82rem;
-        }
-        .tier-row:last-child {
-            border-bottom: none;
-        }
-        .tier-label {
-            opacity: 0.9;
-        }
-        .tier-price {
-            text-align: right;
-            font-weight: 700;
-            font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        .tier-price span {
-            font-size: 0.75rem;
-            opacity: 0.7;
-            margin-left: 0.15rem;
-        }
-        .tier-hint {
-            margin-top: 0.8rem;
-            font-size: 0.8rem;
-            opacity: 0.85;
-        }
-        .tier-hint strong {
-            color: #facc15;
-        }
+  <!-- 🎨 Styles additionnels pour les paliers LOC & RESTO PRO + formation -->
+  <style>
+    .tiers-section {
+      padding: 4rem 0;
+      background: radial-gradient(circle at top, #020617 0, #020617 60%);
+    }
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .tier-card {
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.8rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .tier-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.06), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(248, 113, 22, 0.16), transparent 60%);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+    .tier-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .tier-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: #030712;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+    .tier-title-block h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .tier-title-block p {
+      margin: 0.1rem 0 0;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    .tier-badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 0.3rem 0.8rem;
+      background: rgba(15, 23, 42, 0.9);
+      white-space: nowrap;
+    }
+    .tier-body {
+      position: relative;
+      font-size: 0.9rem;
+    }
+    .tier-body p {
+      margin-bottom: 0.8rem;
+      opacity: 0.9;
+    }
+    .tier-table {
+      border-radius: 14px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      overflow: hidden;
+      background: rgba(15, 23, 42, 0.95);
+    }
+    .tier-row {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      padding: 0.65rem 0.8rem;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      align-items: center;
+      font-size: 0.82rem;
+    }
+    .tier-row:last-child {
+      border-bottom: none;
+    }
+    .tier-label {
+      opacity: 0.9;
+    }
+    .tier-price {
+      text-align: right;
+      font-weight: 700;
+      font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .tier-price span {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin-left: 0.15rem;
+    }
+    .tier-hint {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+    .tier-hint strong {
+      color: #facc15;
+    }
 
-        .small-link {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            margin-top: 0.5rem;
-            display: inline-block;
-        }
+    .small-link {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
 
-        @media (max-width: 768px) {
-            .tiers-section {
-                padding: 3rem 0;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .tiers-section {
+        padding: 3rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <span class="logo">∞</span>
-                <span class="brand-name">DIGIYLYFE</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#modules">Modules</a></li>
-                <li><a href="#pricing">Tarifs</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="pioneer.html" class="btn-pioneer">🎁 Offre Pionniers</a></li>
-                <!-- 🔗 Bouton de commande / paiement -->
-                <li>
-                  <a
-                    href="https://digiylyfe.com/commande-payement/"
-                    class="btn-primary"
-                    data-plan="NAV_GLOBAL"
-                    data-module="multi"
-                    data-origin-button="nav-commande"
-                  >
-                    Commander & payer
-                  </a>
-                </li>
-            </ul>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <span class="logo">∞</span>
+        <span class="brand-name">DIGIYLYFE</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#pricing">Tarifs</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="pioneer.html" class="btn-pioneer">🎁 Offre Pionniers</a></li>
+
+        <!-- ✅ Bouton de commande / paiement (CORRIGÉ) -->
+        <li>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-primary"
+            data-plan="NAV_GLOBAL"
+            data-module="multi"
+            data-origin-button="nav-commande"
+          >
+            Commander & payer
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          L'écosystème digital<br>
+          <span class="gradient-text">0% commission</span><br>
+          pour ton business
+        </h1>
+        <p class="hero-subtitle">
+          VTC • Location • Restaurant • Marketplace • Paiement<br>
+          Garde 100% de tes revenus. Scale sans limites.
+        </p>
+        <div class="hero-cta">
+          <!-- ✅ Hero = direct vers paiement (CORRIGÉ) -->
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-hero-primary"
+            data-plan="UNIVERSAL"
+            data-module="multi"
+            data-origin-button="hero-cta"
+          >
+            🛒 Commander & payer maintenant
+          </a>
+          <a href="#modules" class="btn-hero-secondary">
+            Découvrir les modules
+          </a>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    L'écosystème digital<br>
-                    <span class="gradient-text">0% commission</span><br>
-                    pour ton business
-                </h1>
-                <p class="hero-subtitle">
-                    VTC • Location • Restaurant • Marketplace • Paiement<br>
-                    Garde 100% de tes revenus. Scale sans limites.
-                </p>
-                <div class="hero-cta">
-                    <!-- 🔗 Hero = direct vers commande/paiement -->
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-hero-primary"
-                      data-plan="UNIVERSAL"
-                      data-module="multi"
-                      data-origin-button="hero-cta"
-                    >
-                        🛒 Commander & payer maintenant
-                    </a>
-                    <a href="#modules" class="btn-hero-secondary">
-                        Découvrir les modules
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number">0%</div>
-                        <div class="stat-label">Commission</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">9</div>
-                        <div class="stat-label">Modules</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Possibilités</div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">0%</div>
+            <div class="stat-label">Commission</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">9</div>
+            <div class="stat-label">Modules</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Possibilités</div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Problème Section -->
-    <section class="problem">
-        <div class="container">
-            <h2 class="section-title">Le problème avec les plateformes actuelles</h2>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">😤</div>
-                    <h3>Commissions exorbitantes</h3>
-                    <p>Uber prend 25%. Booking 15%. Jumia 20%.</p>
-                    <div class="problem-stat">-50,000 F/mois perdus</div>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">📊</div>
-                    <h3>Tes données leur appartiennent</h3>
-                    <p>Tes clients = leurs clients. Tu n'as aucun contrôle.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-icon">🔒</div>
-                    <h3>Enfermé dans leur système</h3>
-                    <p>Impossible de migrer. Dépendance totale.</p>
-                </div>
-            </div>
+  <!-- Problème Section -->
+  <section class="problem">
+    <div class="container">
+      <h2 class="section-title">Le problème avec les plateformes actuelles</h2>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">😤</div>
+          <h3>Commissions exorbitantes</h3>
+          <p>Uber prend 25%. Booking 15%. Jumia 20%.</p>
+          <div class="problem-stat">-50,000 F/mois perdus</div>
         </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="solution">
-        <div class="container">
-            <h2 class="section-title">La solution DIGIYLYFE</h2>
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <div class="solution-icon">💎</div>
-                    <h3>0% Commission</h3>
-                    <p>Prix fixe mensuel. Garde 100% de tes revenus.</p>
-                    <div class="solution-example">
-                        Sur 200,000 F revenus :<br>
-                        <span class="old-price">Uber : -50,000 F</span><br>
-                        <span class="new-price">DIGIY : -9,900 F</span><br>
-                        <strong class="save">Économie : +40,100 F/mois !</strong>
-                    </div>
-                </div>
-                <div class="solution-card">
-                    <div class="solution-icon">🏆</div>
-                    <h3>Tes données = Ton business</h3>
-                    <p>Export quand tu veux. Ownership complet.</p>
-                </div>
-                <div class="solution-card">
-                    <div class="solution-icon">🚀</div>
-                    <h3>Scale sans limites</h3>
-                    <p>Même prix que tu fasses 100K ou 10M F/mois.</p>
-                </div>
-            </div>
+        <div class="problem-card">
+          <div class="problem-icon">📊</div>
+          <h3>Tes données leur appartiennent</h3>
+          <p>Tes clients = leurs clients. Tu n'as aucun contrôle.</p>
         </div>
-    </section>
-
-    <!-- Modules Section -->
-    <section id="modules" class="modules">
-        <div class="container">
-            <h2 class="section-title">9 modules pour faire grandir ton business</h2>
-            <p class="section-subtitle">Choisis ce dont tu as besoin. Tu confirmeras ton pack sur la page de commande.</p>
-            
-            <div class="modules-grid">
-                <!-- DRIVER -->
-                <div class="module-card">
-                    <div class="module-icon">🚗</div>
-                    <h3 class="module-name">DIGIY DRIVER</h3>
-                    <p class="module-desc">VTC 0% commission</p>
-                    <div class="module-price">9,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Gestion courses complète</li>
-                        <li>✅ GPS temps réel</li>
-                        <li>✅ Paiement mobile intégré</li>
-                        <li>✅ 0% commission (vs Uber 25%)</li>
-                    </ul>
-                    <!-- 👉 Choix module DRIVER → commande & Supabase -->
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="driver"
-                      data-origin-button="module-driver"
-                    >
-                        Choisir ce module →
-                    </a>
-                </div>
-
-                <!-- LOC -->
-                <div class="module-card">
-                    <div class="module-icon">🏠</div>
-                    <h3 class="module-name">DIGIY LOC</h3>
-                    <p class="module-desc">Location courte durée</p>
-                    <div class="module-price">À partir de 9,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Calendrier disponibilités</li>
-                        <li>✅ Réservations en ligne</li>
-                        <li>✅ Paiements sécurisés</li>
-                        <li>✅ 0% commission (vs Booking 15%)</li>
-                    </ul>
-                    <!-- 👉 Choix module LOC -->
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="loc"
-                      data-origin-button="module-loc"
-                    >
-                        Choisir ce module →
-                    </a>
-                    <a href="#paliers" class="btn-module small-link">Voir les paliers LOC ↓</a>
-                </div>
-
-                <!-- RÉSA -->
-                <div class="module-card">
-                    <div class="module-icon">🍽️</div>
-                    <h3 class="module-name">DIGIY RÉSA</h3>
-                    <p class="module-desc">Réservations restaurant</p>
-                    <div class="module-price">9,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Planning tables temps réel</li>
-                        <li>✅ Confirmations auto SMS</li>
-                        <li>✅ Liste d'attente smart</li>
-                        <li>✅ +30% taux remplissage</li>
-                    </ul>
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="resa"
-                      data-origin-button="module-resa"
-                    >
-                        Choisir ce module →
-                    </a>
-                </div>
-
-                <!-- RESTO PRO -->
-                <div class="module-card featured">
-                    <div class="featured-badge">⭐ PRO</div>
-                    <div class="module-icon">🍴</div>
-                    <h3 class="module-name">DIGIY RESTO PRO</h3>
-                    <p class="module-desc">Gestion restaurant complète</p>
-                    <div class="module-price">À partir de 9,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Gestion commandes multi-zones</li>
-                        <li>✅ Kitchen Display System</li>
-                        <li>✅ Caisse intégrée</li>
-                        <li>✅ Menu QR code</li>
-                    </ul>
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="resto_pro"
-                      data-origin-button="module-resto-pro"
-                    >
-                        Choisir ce module →
-                    </a>
-                    <a href="#paliers" class="btn-module small-link">Voir les paliers RESTO PRO ↓</a>
-                </div>
-
-                <!-- POS -->
-                <div class="module-card">
-                    <div class="module-icon">💳</div>
-                    <h3 class="module-name">DIGIY POS</h3>
-                    <p class="module-desc">Point de vente moderne</p>
-                    <div class="module-price">9,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Caisse tactile rapide</li>
-                        <li>✅ Gestion stock temps réel</li>
-                        <li>✅ Paiements multi-modes</li>
-                        <li>✅ Rapports quotidiens</li>
-                    </ul>
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="pos"
-                      data-origin-button="module-pos"
-                    >
-                        Choisir ce module →
-                    </a>
-                </div>
-
-                <!-- BUILD -->
-                <div class="module-card">
-                    <div class="module-icon">🏗️</div>
-                    <h3 class="module-name">DIGIY BUILD</h3>
-                    <p class="module-desc">Services construction</p>
-                    <div class="module-price">9,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Profil pro artisan</li>
-                        <li>✅ Devis automatiques</li>
-                        <li>✅ Planning chantiers</li>
-                        <li>✅ Galerie réalisations</li>
-                    </ul>
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="build"
-                      data-origin-button="module-build"
-                    >
-                        Choisir ce module →
-                    </a>
-                </div>
-
-                <!-- MARKET -->
-                <div class="module-card">
-                    <div class="module-icon">🛒</div>
-                    <h3 class="module-name">DIGIY MARKET</h3>
-                    <p class="module-desc">Marketplace e-commerce</p>
-                    <div class="module-price">12,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Boutique en ligne</li>
-                        <li>✅ Paiement mobile intégré</li>
-                        <li>✅ Gestion stock</li>
-                        <li>✅ 0% commission (vs Jumia 20%)</li>
-                    </ul>
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="market"
-                      data-origin-button="module-market"
-                    >
-                        Choisir ce module →
-                    </a>
-                </div>
-
-                <!-- PAY -->
-                <div class="module-card">
-                    <div class="module-icon">💰</div>
-                    <h3 class="module-name">DIGIY PAY</h3>
-                    <p class="module-desc">Portefeuille mobile</p>
-                    <div class="module-price">4,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Wallet digital</li>
-                        <li>✅ Transferts instantanés</li>
-                        <li>✅ QR Code paiement</li>
-                        <li>✅ Multi-devises</li>
-                    </ul>
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="pay"
-                      data-origin-button="module-pay"
-                    >
-                        Choisir ce module →
-                    </a>
-                </div>
-
-                <!-- JOBS -->
-                <div class="module-card">
-                    <div class="module-icon">💼</div>
-                    <h3 class="module-name">DIGIY JOBS</h3>
-                    <p class="module-desc">Emploi & recrutement</p>
-                    <div class="module-price">7,900 F<span>/mois</span></div>
-                    <ul class="module-features">
-                        <li>✅ Offres emploi illimitées</li>
-                        <li>✅ CV candidats qualifiés</li>
-                        <li>✅ Tri automatique IA</li>
-                        <li>✅ Entretiens vidéo</li>
-                    </ul>
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-module"
-                      data-plan="MODULE_ONLY"
-                      data-module="jobs"
-                      data-origin-button="module-jobs"
-                    >
-                        Choisir ce module →
-                    </a>
-                </div>
-            </div>
+        <div class="problem-card">
+          <div class="problem-icon">🔒</div>
+          <h3>Enfermé dans leur système</h3>
+          <p>Impossible de migrer. Dépendance totale.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 🧱 Tarifs détaillés DIGIY LOC & RESTO PRO (paliers) -->
-    <section class="tiers-section" id="paliers">
-        <div class="container">
-            <h2 class="section-title">Tarifs DIGIY LOC & DIGIY RESTO PRO</h2>
-            <p class="section-subtitle">
-                Forfaits mensuels par paliers. Tu payes selon la taille de ton activité, jamais en pourcentage sur ton chiffre.
+  <!-- Solution Section -->
+  <section class="solution">
+    <div class="container">
+      <h2 class="section-title">La solution DIGIYLYFE</h2>
+      <div class="solution-grid">
+        <div class="solution-card">
+          <div class="solution-icon">💎</div>
+          <h3>0% Commission</h3>
+          <p>Prix fixe mensuel. Garde 100% de tes revenus.</p>
+          <div class="solution-example">
+            Sur 200,000 F revenus :<br>
+            <span class="old-price">Uber : -50,000 F</span><br>
+            <span class="new-price">DIGIY : -9,900 F</span><br>
+            <strong class="save">Économie : +40,100 F/mois !</strong>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">🏆</div>
+          <h3>Tes données = Ton business</h3>
+          <p>Export quand tu veux. Ownership complet.</p>
+        </div>
+        <div class="solution-card">
+          <div class="solution-icon">🚀</div>
+          <h3>Scale sans limites</h3>
+          <p>Même prix que tu fasses 100K ou 10M F/mois.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules Section -->
+  <section id="modules" class="modules">
+    <div class="container">
+      <h2 class="section-title">9 modules pour faire grandir ton business</h2>
+      <p class="section-subtitle">Choisis ce dont tu as besoin. Tu confirmeras ton pack sur la page de paiement.</p>
+
+      <div class="modules-grid">
+        <!-- DRIVER -->
+        <div class="module-card">
+          <div class="module-icon">🚗</div>
+          <h3 class="module-name">DIGIY DRIVER</h3>
+          <p class="module-desc">VTC 0% commission</p>
+          <div class="module-price">9,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Gestion courses complète</li>
+            <li>✅ GPS temps réel</li>
+            <li>✅ Paiement mobile intégré</li>
+            <li>✅ 0% commission (vs Uber 25%)</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="driver"
+            data-origin-button="module-driver"
+          >
+            Choisir ce module →
+          </a>
+        </div>
+
+        <!-- LOC -->
+        <div class="module-card">
+          <div class="module-icon">🏠</div>
+          <h3 class="module-name">DIGIY LOC</h3>
+          <p class="module-desc">Location courte durée</p>
+          <div class="module-price">À partir de 9,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Calendrier disponibilités</li>
+            <li>✅ Réservations en ligne</li>
+            <li>✅ Paiements sécurisés</li>
+            <li>✅ 0% commission (vs Booking 15%)</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="loc"
+            data-origin-button="module-loc"
+          >
+            Choisir ce module →
+          </a>
+          <a href="#paliers" class="btn-module small-link">Voir les paliers LOC ↓</a>
+        </div>
+
+        <!-- RÉSA -->
+        <div class="module-card">
+          <div class="module-icon">🍽️</div>
+          <h3 class="module-name">DIGIY RÉSA</h3>
+          <p class="module-desc">Réservations restaurant</p>
+          <div class="module-price">9,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Planning tables temps réel</li>
+            <li>✅ Confirmations auto SMS</li>
+            <li>✅ Liste d'attente smart</li>
+            <li>✅ +30% taux remplissage</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="resa"
+            data-origin-button="module-resa"
+          >
+            Choisir ce module →
+          </a>
+        </div>
+
+        <!-- RESTO PRO -->
+        <div class="module-card featured">
+          <div class="featured-badge">⭐ PRO</div>
+          <div class="module-icon">🍴</div>
+          <h3 class="module-name">DIGIY RESTO PRO</h3>
+          <p class="module-desc">Gestion restaurant complète</p>
+          <div class="module-price">À partir de 9,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Gestion commandes multi-zones</li>
+            <li>✅ Kitchen Display System</li>
+            <li>✅ Caisse intégrée</li>
+            <li>✅ Menu QR code</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="resto_pro"
+            data-origin-button="module-resto-pro"
+          >
+            Choisir ce module →
+          </a>
+          <a href="#paliers" class="btn-module small-link">Voir les paliers RESTO PRO ↓</a>
+        </div>
+
+        <!-- POS -->
+        <div class="module-card">
+          <div class="module-icon">💳</div>
+          <h3 class="module-name">DIGIY POS</h3>
+          <p class="module-desc">Point de vente moderne</p>
+          <div class="module-price">9,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Caisse tactile rapide</li>
+            <li>✅ Gestion stock temps réel</li>
+            <li>✅ Paiements multi-modes</li>
+            <li>✅ Rapports quotidiens</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="pos"
+            data-origin-button="module-pos"
+          >
+            Choisir ce module →
+          </a>
+        </div>
+
+        <!-- BUILD -->
+        <div class="module-card">
+          <div class="module-icon">🏗️</div>
+          <h3 class="module-name">DIGIY BUILD</h3>
+          <p class="module-desc">Services construction</p>
+          <div class="module-price">9,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Profil pro artisan</li>
+            <li>✅ Devis automatiques</li>
+            <li>✅ Planning chantiers</li>
+            <li>✅ Galerie réalisations</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="build"
+            data-origin-button="module-build"
+          >
+            Choisir ce module →
+          </a>
+        </div>
+
+        <!-- MARKET -->
+        <div class="module-card">
+          <div class="module-icon">🛒</div>
+          <h3 class="module-name">DIGIY MARKET</h3>
+          <p class="module-desc">Marketplace e-commerce</p>
+          <div class="module-price">12,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Boutique en ligne</li>
+            <li>✅ Paiement mobile intégré</li>
+            <li>✅ Gestion stock</li>
+            <li>✅ 0% commission (vs Jumia 20%)</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="market"
+            data-origin-button="module-market"
+          >
+            Choisir ce module →
+          </a>
+        </div>
+
+        <!-- PAY -->
+        <div class="module-card">
+          <div class="module-icon">💰</div>
+          <h3 class="module-name">DIGIY PAY</h3>
+          <p class="module-desc">Portefeuille mobile</p>
+          <div class="module-price">4,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Wallet digital</li>
+            <li>✅ Transferts instantanés</li>
+            <li>✅ QR Code paiement</li>
+            <li>✅ Multi-devises</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="pay"
+            data-origin-button="module-pay"
+          >
+            Choisir ce module →
+          </a>
+        </div>
+
+        <!-- JOBS -->
+        <div class="module-card">
+          <div class="module-icon">💼</div>
+          <h3 class="module-name">DIGIY JOBS</h3>
+          <p class="module-desc">Emploi & recrutement</p>
+          <div class="module-price">7,900 F<span>/mois</span></div>
+          <ul class="module-features">
+            <li>✅ Offres emploi illimitées</li>
+            <li>✅ CV candidats qualifiés</li>
+            <li>✅ Tri automatique IA</li>
+            <li>✅ Entretiens vidéo</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-module"
+            data-plan="MODULE_ONLY"
+            data-module="jobs"
+            data-origin-button="module-jobs"
+          >
+            Choisir ce module →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧱 Tarifs détaillés DIGIY LOC & RESTO PRO (paliers) -->
+  <section class="tiers-section" id="paliers">
+    <div class="container">
+      <h2 class="section-title">Tarifs DIGIY LOC & DIGIY RESTO PRO</h2>
+      <p class="section-subtitle">
+        Forfaits mensuels par paliers. Tu payes selon la taille de ton activité, jamais en pourcentage sur ton chiffre.
+      </p>
+
+      <div class="tiers-grid">
+        <!-- LOC -->
+        <article class="tier-card">
+          <div class="tier-header">
+            <div class="tier-icon">🏠</div>
+            <div class="tier-title-block">
+              <h3>DIGIY LOC</h3>
+              <p>Location courte durée • 0% commission</p>
+            </div>
+            <div class="tier-badge">Par nombre de logements</div>
+          </div>
+          <div class="tier-body">
+            <p>Tu payes selon le nombre de biens gérés. DIGIY ne prend jamais de commission sur tes réservations.</p>
+            <div class="tier-table">
+              <div class="tier-row">
+                <div class="tier-label">1 à 5 logements</div>
+                <div class="tier-price">9 900 F<span>/mois</span></div>
+              </div>
+              <div class="tier-row">
+                <div class="tier-label">6 à 9 logements</div>
+                <div class="tier-price">15 000 F<span>/mois</span></div>
+              </div>
+              <div class="tier-row">
+                <div class="tier-label">10 à 20 logements</div>
+                <div class="tier-price">25 000 F<span>/mois</span></div>
+              </div>
+              <div class="tier-row">
+                <div class="tier-label">21 à 30 logements</div>
+                <div class="tier-price">30 000 F<span>/mois</span></div>
+              </div>
+              <div class="tier-row">
+                <div class="tier-label">Plus de 30 logements</div>
+                <div class="tier-price">50 000 F<span>/mois</span></div>
+              </div>
+            </div>
+            <p class="tier-hint">
+              <strong>0% commission :</strong> que tu encaisses 200 000 F ou 10 000 000 F, DIGIY ne touche jamais à tes loyers. Tu payes uniquement ton forfait.
             </p>
+          </div>
+        </article>
 
-            <div class="tiers-grid">
-                <!-- LOC -->
-                <article class="tier-card">
-                    <div class="tier-header">
-                        <div class="tier-icon">🏠</div>
-                        <div class="tier-title-block">
-                            <h3>DIGIY LOC</h3>
-                            <p>Location courte durée • 0% commission</p>
-                        </div>
-                        <div class="tier-badge">Par nombre de logements</div>
-                    </div>
-                    <div class="tier-body">
-                        <p>Tu payes selon le nombre de biens gérés. DIGIY ne prend jamais de commission sur tes réservations.</p>
-                        <div class="tier-table">
-                            <div class="tier-row">
-                                <div class="tier-label">1 à 5 logements</div>
-                                <div class="tier-price">9 900 F<span>/mois</span></div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">6 à 9 logements</div>
-                                <div class="tier-price">15 000 F<span>/mois</span></div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">10 à 20 logements</div>
-                                <div class="tier-price">25 000 F<span>/mois</span></div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">21 à 30 logements</div>
-                                <div class="tier-price">30 000 F<span>/mois</span></div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">Plus de 30 logements</div>
-                                <div class="tier-price">50 000 F<span>/mois</span></div>
-                            </div>
-                        </div>
-                        <p class="tier-hint">
-                            <strong>0% commission :</strong> que tu encaisses 200 000 F ou 10 000 000 F, DIGIY ne touche jamais à tes loyers. Tu payes uniquement ton forfait.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- RESTO PRO -->
-                <article class="tier-card">
-                    <div class="tier-header">
-                        <div class="tier-icon">🍽️</div>
-                        <div class="tier-title-block">
-                            <h3>DIGIY RESTO PRO</h3>
-                            <p>Restaurant & réservations • 0% commission</p>
-                        </div>
-                        <div class="tier-badge">Par taille de restaurant</div>
-                    </div>
-                    <div class="tier-body">
-                        <p>Le tarif dépend de la taille de ton restaurant (tables / zones). Objectif : remplir tes tables, pas prendre sur ta marge.</p>
-                        <div class="tier-table">
-                            <div class="tier-row">
-                                <div class="tier-label">Petit resto (1 à 5 tables / 1 zone)</div>
-                                <div class="tier-price">9 900 F<span>/mois</span></div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">Resto moyen (6 à 9 tables)</div>
-                                <div class="tier-price">15 000 F<span>/mois</span></div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">Grand resto (10 à 20 tables)</div>
-                                <div class="tier-price">25 000 F<span>/mois</span></div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">Très grand resto (21 à 30 tables)</div>
-                                <div class="tier-price">30 000 F<span>/mois</span></div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">Chaîne / hôtel (+ de 30 tables)</div>
-                                <div class="tier-price">50 000 F<span>/mois</span></div>
-                            </div>
-                        </div>
-                        <p class="tier-hint">
-                            <strong>Remplissage avant commission :</strong> DIGIY t’aide à remplir, toi tu gardes 100% des additions. Le forfait est fixe, connu, maîtrisé.
-                        </p>
-                    </div>
-                </article>
+        <!-- RESTO PRO -->
+        <article class="tier-card">
+          <div class="tier-header">
+            <div class="tier-icon">🍽️</div>
+            <div class="tier-title-block">
+              <h3>DIGIY RESTO PRO</h3>
+              <p>Restaurant & réservations • 0% commission</p>
             </div>
-        </div>
-    </section>
-
-    <!-- 🧱 Formule Formation & Installation DIGIY -->
-    <section class="tiers-section" id="formation">
-        <div class="container">
-            <h2 class="section-title">Formule Formation & Installation DIGIY</h2>
-            <p class="section-subtitle">
-                On t’installe, on te forme, et ton business tourne dès le premier jour.
+            <div class="tier-badge">Par taille de restaurant</div>
+          </div>
+          <div class="tier-body">
+            <p>Le tarif dépend de la taille de ton restaurant (tables / zones). Objectif : remplir tes tables, pas prendre sur ta marge.</p>
+            <div class="tier-table">
+              <div class="tier-row">
+                <div class="tier-label">Petit resto (1 à 5 tables / 1 zone)</div>
+                <div class="tier-price">9 900 F<span>/mois</span></div>
+              </div>
+              <div class="tier-row">
+                <div class="tier-label">Resto moyen (6 à 9 tables)</div>
+                <div class="tier-price">15 000 F<span>/mois</span></div>
+              </div>
+              <div class="tier-row">
+                <div class="tier-label">Grand resto (10 à 20 tables)</div>
+                <div class="tier-price">25 000 F<span>/mois</span></div>
+              </div>
+              <div class="tier-row">
+                <div class="tier-label">Très grand resto (21 à 30 tables)</div>
+                <div class="tier-price">30 000 F<span>/mois</span></div>
+              </div>
+              <div class="tier-row">
+                <div class="tier-label">Chaîne / hôtel (+ de 30 tables)</div>
+                <div class="tier-price">50 000 F<span>/mois</span></div>
+              </div>
+            </div>
+            <p class="tier-hint">
+              <strong>Remplissage avant commission :</strong> DIGIY t’aide à remplir, toi tu gardes 100% des additions. Le forfait est fixe, connu, maîtrisé.
             </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-            <div class="tiers-grid">
-                <article class="tier-card">
-                    <div class="tier-header">
-                        <div class="tier-icon">👨‍🏫</div>
-                        <div class="tier-title-block">
-                            <h3>Accompagnement terrain</h3>
-                            <p>Installation, formation & personnalisation</p>
-                        </div>
-                        <div class="tier-badge">Formule Formation</div>
-                    </div>
-                    <div class="tier-body">
-                        <p>On vient chez toi, on pose DIGIY dans ta maison, on forme ton équipe et on te laisse avec un outil prêt à encaisser.</p>
-                        <div class="tier-table">
-                            <div class="tier-row">
-                                <div class="tier-label">Installation & mise en service</div>
-                                <div class="tier-price">85 000 F</div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">Formation équipe (½ journée, ≤ 5 pers.)</div>
-                                <div class="tier-price">45 000 F</div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">Personnalisation (branding, visuels)</div>
-                                <div class="tier-price">65 000 F</div>
-                            </div>
-                            <div class="tier-row">
-                                <div class="tier-label">Intégration systèmes (ERP, compta…)</div>
-                                <div class="tier-price">125 000 F</div>
-                            </div>
-                        </div>
-                        <p class="tier-hint">
-                            <strong>Objectif :</strong> tu ne perds pas de temps, tu ne te prends pas la tête. DIGIY arrive, tout est prêt pour encaisser.
-                        </p>
-                    </div>
-                </article>
-            </div>
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2 class="section-title">Choisis ton plan</h2>
+      <p class="section-subtitle">Prix fixes. Pas de surprises. Pas de commission cachée.</p>
+
+      <div class="pricing-grid">
+        <!-- STARTER -->
+        <div class="pricing-card">
+          <h3 class="pricing-name">STARTER</h3>
+          <div class="pricing-price">19,900 F<span>/mois</span></div>
+          <ul class="pricing-features">
+            <li>✅ 2 modules au choix</li>
+            <li>✅ Support standard</li>
+            <li>✅ Formation en ligne</li>
+            <li>✅ Mises à jour incluses</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-pricing"
+            data-plan="STARTER_19900"
+            data-module="multi"
+            data-origin-button="pricing-starter"
+          >
+            Commencer
+          </a>
         </div>
-    </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title">Choisis ton plan</h2>
-            <p class="section-subtitle">Prix fixes. Pas de surprises. Pas de commission cachée.</p>
-
-            <div class="pricing-grid">
-                <!-- STARTER -->
-                <div class="pricing-card">
-                    <h3 class="pricing-name">STARTER</h3>
-                    <div class="pricing-price">19,900 F<span>/mois</span></div>
-                    <ul class="pricing-features">
-                        <li>✅ 2 modules au choix</li>
-                        <li>✅ Support standard</li>
-                        <li>✅ Formation en ligne</li>
-                        <li>✅ Mises à jour incluses</li>
-                    </ul>
-                    <!-- 🔗 redirige vers commande/paiement -->
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-pricing"
-                      data-plan="STARTER_19900"
-                      data-module="multi"
-                      data-origin-button="pricing-starter"
-                    >
-                      Commencer
-                    </a>
-                </div>
-
-                <!-- PRO -->
-                <div class="pricing-card featured">
-                    <div class="popular-badge">⭐ POPULAIRE</div>
-                    <h3 class="pricing-name">PRO</h3>
-                    <div class="pricing-price">29,900 F<span>/mois</span></div>
-                    <ul class="pricing-features">
-                        <li>✅ 4 modules au choix</li>
-                        <li>✅ Support prioritaire</li>
-                        <li>✅ Branding personnalisé</li>
-                        <li>✅ Formation dédiée</li>
-                        <li>✅ Analytics avancés</li>
-                    </ul>
-                    <!-- 🔗 redirige vers commande/paiement -->
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-pricing primary"
-                      data-plan="PRO_29900"
-                      data-module="multi"
-                      data-origin-button="pricing-pro"
-                    >
-                      Choisir PRO
-                    </a>
-                </div>
-
-                <!-- BUSINESS -->
-                <div class="pricing-card">
-                    <h3 class="pricing-name">BUSINESS</h3>
-                    <div class="pricing-price">49,900 F<span>/mois</span></div>
-                    <ul class="pricing-features">
-                        <li>✅ TOUS les 9 modules</li>
-                        <li>✅ Support 24/7 dédié</li>
-                        <li>✅ White-label complet</li>
-                        <li>✅ API access illimité</li>
-                        <li>✅ Formation équipe</li>
-                        <li>✅ Technico-commercial dédié</li>
-                    </ul>
-                    <!-- 🔗 redirige vers commande/paiement -->
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-pricing"
-                      data-plan="BUSINESS_49900"
-                      data-module="multi"
-                      data-origin-button="pricing-business"
-                    >
-                      Choisir BUSINESS
-                    </a>
-                </div>
-            </div>
-
-            <!-- Pioneer Offer Banner -->
-            <div class="pioneer-banner">
-                <div class="pioneer-content">
-                    <div class="pioneer-badge">🎁 OFFRE PIONNIERS</div>
-                    <h3>100 premiers clients : Plan BUSINESS à 29,900 F/mois À VIE</h3>
-                    <p>Au lieu de 49,900 F/mois. Économie : 240,000 F/an. Prix garanti à vie.</p>
-                    <!-- 🔗 on envoie aussi vers commande/paiement -->
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-pioneer-cta"
-                      data-plan="BUSINESS_PIONNIER_29900"
-                      data-module="multi"
-                      data-origin-button="pioneer-banner"
-                    >
-                      Réserver ma place →
-                    </a>
-                </div>
-            </div>
+        <!-- PRO -->
+        <div class="pricing-card featured">
+          <div class="popular-badge">⭐ POPULAIRE</div>
+          <h3 class="pricing-name">PRO</h3>
+          <div class="pricing-price">29,900 F<span>/mois</span></div>
+          <ul class="pricing-features">
+            <li>✅ 4 modules au choix</li>
+            <li>✅ Support prioritaire</li>
+            <li>✅ Branding personnalisé</li>
+            <li>✅ Formation dédiée</li>
+            <li>✅ Analytics avancés</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-pricing primary"
+            data-plan="PRO_29900"
+            data-module="multi"
+            data-origin-button="pricing-pro"
+          >
+            Choisir PRO
+          </a>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Services d'accompagnement</h2>
-            <p class="section-subtitle">On t'aide à démarrer et scale ton business</p>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">👨‍🏫</div>
-                    <h3>Formation Personnalisée</h3>
-                    <div class="service-price">45,000 F</div>
-                    <p>1 jour formation sur site, jusqu'à 5 personnes, support 30 jours</p>
-                    <a href="#formation" class="btn-service">Voir la formule Formation →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Setup Complet</h3>
-                    <div class="service-price">85,000 F</div>
-                    <p>Installation, migration données, configuration, formation équipe</p>
-                    <a href="#formation" class="btn-service">Voir les détails →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Intégration Systèmes</h3>
-                    <div class="service-price">125,000 F</div>
-                    <p>Connexion ERP, CRM, comptabilité, sync données bidirectionnelle</p>
-                    <a href="#formation" class="btn-service">Voir l'offre intégration →</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>Personnalisation</h3>
-                    <div class="service-price">65,000 F</div>
-                    <p>Design interface sur-mesure, templates branded, workflows customs</p>
-                    <a href="#formation" class="btn-service">Voir la personnalisation →</a>
-                </div>
-            </div>
-
-            <div class="services-cta">
-                <a href="#formation" class="btn-services-all">Voir la Formule Formation complète →</a>
-            </div>
+        <!-- BUSINESS -->
+        <div class="pricing-card">
+          <h3 class="pricing-name">BUSINESS</h3>
+          <div class="pricing-price">49,900 F<span>/mois</span></div>
+          <ul class="pricing-features">
+            <li>✅ TOUS les 9 modules</li>
+            <li>✅ Support 24/7 dédié</li>
+            <li>✅ White-label complet</li>
+            <li>✅ API access illimité</li>
+            <li>✅ Formation équipe</li>
+            <li>✅ Technico-commercial dédié</li>
+          </ul>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-pricing"
+            data-plan="BUSINESS_49900"
+            data-module="multi"
+            data-origin-button="pricing-business"
+          >
+            Choisir BUSINESS
+          </a>
         </div>
-    </section>
+      </div>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Ils ont choisi DIGIYLYFE</h2>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Avec DIGIY LOC, j'économise 65,000 F/mois vs Booking. En 2 mois, j'ai rentabilisé le setup. Maintenant je garde 100% de mes revenus !"</p>
-                    <div class="testimonial-author">
-                        <strong>Baptiste</strong>
-                        <span>Chez Baptiste - Saly</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"DIGIY DRIVER m'a libéré d'Uber. Plus de 40,000 F/mois en poche. Les clients adorent payer moins cher, moi je gagne plus. Win-win !"</p>
-                    <div class="testimonial-author">
-                        <strong>Abdou</strong>
-                        <span>Chauffeur VTC - Dakar</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"DIGIY RESTO a transformé mon restaurant. -40% erreurs commandes, +25% vitesse service. Clients plus contents, équipe plus efficace."</p>
-                    <div class="testimonial-author">
-                        <strong>Fatou</strong>
-                        <span>Le Petit Dakar - Plateau</span>
-                    </div>
-                </div>
-            </div>
+      <!-- Pioneer Offer Banner -->
+      <div class="pioneer-banner">
+        <div class="pioneer-content">
+          <div class="pioneer-badge">🎁 OFFRE PIONNIERS</div>
+          <h3>100 premiers clients : Plan BUSINESS à 29,900 F/mois À VIE</h3>
+          <p>Au lieu de 49,900 F/mois. Économie : 240,000 F/an. Prix garanti à vie.</p>
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-pioneer-cta"
+            data-plan="BUSINESS_PIONNIER_29900"
+            data-module="multi"
+            data-origin-button="pioneer-banner"
+          >
+            Réserver ma place →
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Prêt à garder 100% de tes revenus ?</h2>
-                <p>Rejoins les 100 premiers et bénéficie du prix pionnier à vie</p>
-                <div class="cta-buttons">
-                    <!-- 🔗 Offre Pionniers -> commande/paiement -->
-                    <a
-                      href="https://digiylyfe.com/commande-payement/"
-                      class="btn-cta-primary"
-                      data-plan="CTA_GLOBAL"
-                      data-module="multi"
-                      data-origin-button="cta-bottom"
-                    >
-                      🎁 Commander mon plan
-                    </a>
-                    <!-- WhatsApp réel -->
-                    <a href="https://wa.me/221771342889" class="btn-cta-secondary">💬 Parler à un expert</a>
-                </div>
-            </div>
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Prêt à garder 100% de tes revenus ?</h2>
+        <p>Rejoins les 100 premiers et bénéficie du prix pionnier à vie</p>
+        <div class="cta-buttons">
+          <a
+            href="https://beauville.github.io/commencer-a-payer/"
+            class="btn-cta-primary"
+            data-plan="CTA_GLOBAL"
+            data-module="multi"
+            data-origin-button="cta-bottom"
+          >
+            🎁 Commander mon plan
+          </a>
+          <a href="https://wa.me/221771342889" class="btn-cta-secondary">💬 Parler à un expert</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-brand">
-                        <span class="logo">∞</span>
-                        <span class="brand-name">DIGIYLYFE</span>
-                    </div>
-                    <p>L'écosystème digital africain<br>0% commission • ∞ possibilités</p>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Modules</h4>
-                    <ul>
-                        <!-- Ici on peut laisser les liens vitrine GitHub si tu veux montrer l'exemple,
-                             mais ce ne sont plus les liens de CHOIX modules, juste d'info. -->
-                        <li><a href="https://beauville.github.io/digiy-chauffeur/" target="_blank" rel="noopener">DIGIY DRIVER (exemple)</a></li>
-                        <li><a href="https://beauville.github.io/portail-inscription/" target="_blank" rel="noopener">DIGIY LOC (exemple)</a></li>
-                        <li><a href="https://beauville.github.io/portail-inscription/" target="_blank" rel="noopener">DIGIY RESTO (exemple)</a></li>
-                        <li><a href="https://beauville.github.io/portail-inscription/" target="_blank" rel="noopener">DIGIY MARKET (exemple)</a></li>
-                        <li><a href="https://beauville.github.io/portail-inscription/" target="_blank" rel="noopener">DIGIY PAY (exemple)</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Entreprise</h4>
-                    <ul>
-                        <li><a href="#pricing">Tarifs</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="pioneer.html">Offre Pionniers</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>📧 DIGIYLYFE@GMAIL.COM</li>
-                        <li>📱 WhatsApp: +221 77 134 28 89</li>
-                        <li>📍 Saly & Dakar, Sénégal • Sarlat, France</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 DIGIYLYFE. Tous droits réservés.</p>
-                <div class="footer-links">
-                    <a href="#">Mentions légales</a>
-                    <a href="#">Confidentialité</a>
-                    <a href="#">CGU</a>
-                </div>
-            </div>
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <span class="logo">∞</span>
+            <span class="brand-name">DIGIYLYFE</span>
+          </div>
+          <p>L'écosystème digital africain<br>0% commission • ∞ possibilités</p>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="footer-col">
+          <h4>Modules</h4>
+          <ul>
+            <li><a href="https://beauville.github.io/digiy-chauffeur/" target="_blank" rel="noopener">DIGIY DRIVER (exemple)</a></li>
+            <li><a href="https://beauville.github.io/portail-inscription/" target="_blank" rel="noopener">DIGIY LOC (exemple)</a></li>
+            <li><a href="https://beauville.github.io/portail-inscription/" target="_blank" rel="noopener">DIGIY RESTO (exemple)</a></li>
+            <li><a href="https://beauville.github.io/portail-inscription/" target="_blank" rel="noopener">DIGIY MARKET (exemple)</a></li>
+            <li><a href="https://beauville.github.io/portail-inscription/" target="_blank" rel="noopener">DIGIY PAY (exemple)</a></li>
+          </ul>
+        </div>
 
-    <!-- Supabase + tracking des clics tarifs -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-      const SUPABASE_URL = "https://wesqmwjjtsefyjnluosj.supabase.co";
-      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indlc3Ftd2pqdHNlZnlqbmx1b3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxNzg4ODIsImV4cCI6MjA4MDc1NDg4Mn0.dZfYOc2iL2_wRYL3zExZFsFSBK6AbMeOid2LrIjcTdA";
+        <div class="footer-col">
+          <h4>Entreprise</h4>
+          <ul>
+            <li><a href="#pricing">Tarifs</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="pioneer.html">Offre Pionniers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
 
-      const pricingClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>📧 DIGIYLYFE@GMAIL.COM</li>
+            <li>📱 WhatsApp: +221 77 134 28 89</li>
+            <li>📍 Saly & Dakar, Sénégal • Sarlat, France</li>
+          </ul>
+        </div>
+      </div>
 
-      async function logPricingClick(linkEl) {
-        const planCode = linkEl.getAttribute("data-plan") || "UNKNOWN_PLAN";
-        const moduleCode = linkEl.getAttribute("data-module") || "unknown";
-        const originButton = linkEl.getAttribute("data-origin-button") || null;
-        const targetUrl = linkEl.getAttribute("href") || null;
+      <div class="footer-bottom">
+        <p>&copy; 2024 DIGIYLYFE. Tous droits réservés.</p>
+        <div class="footer-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+          <a href="#">CGU</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-        let userEmail = null;
-        try {
-          const { data: userData } = await pricingClient.auth.getUser();
-          if (userData && userData.user && userData.user.email) {
-            userEmail = userData.user.email;
-          }
-        } catch (e) {
-          console.warn("Pas de session Supabase (landing public), ce n'est pas bloquant.");
+  <script src="script.js"></script>
+
+  <!-- Supabase + tracking des clics tarifs -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://wesqmwjjtsefyjnluosj.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indlc3Ftd2pqdHNlZnlqbmx1b3NqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUxNzg4ODIsImV4cCI6MjA4MDc1NDg4Mn0.dZfYOc2iL2_wRYL3zExZFsFSBK6AbMeOid2LrIjcTdA";
+
+    const pricingClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    async function logPricingClick(linkEl) {
+      const planCode = linkEl.getAttribute("data-plan") || "UNKNOWN_PLAN";
+      const moduleCode = linkEl.getAttribute("data-module") || "unknown";
+      const originButton = linkEl.getAttribute("data-origin-button") || null;
+      const targetUrl = linkEl.getAttribute("href") || null;
+
+      let userEmail = null;
+      try {
+        const { data: userData } = await pricingClient.auth.getUser();
+        if (userData && userData.user && userData.user.email) {
+          userEmail = userData.user.email;
         }
-
-        try {
-          await pricingClient.from("pricing_leads").insert({
-            plan_code: planCode,
-            module: moduleCode,
-            origin_page: "tarifs-public",
-            origin_button: originButton,
-            wp_target_url: targetUrl,
-            extra: userEmail ? { email: userEmail } : null
-          });
-        } catch (err) {
-          console.error("Erreur enregistrement pricing_lead:", err);
-        }
+      } catch (e) {
+        console.warn("Pas de session Supabase (landing public), ce n'est pas bloquant.");
       }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const pricingLinks = document.querySelectorAll("a[data-plan]");
+      try {
+        await pricingClient.from("pricing_leads").insert({
+          plan_code: planCode,
+          module: moduleCode,
+          origin_page: "tarifs-public",
+          origin_button: originButton,
+          wp_target_url: targetUrl,
+          extra: userEmail ? { email: userEmail } : null
+        });
+      } catch (err) {
+        console.error("Erreur enregistrement pricing_lead:", err);
+      }
+    }
 
-        pricingLinks.forEach((linkEl) => {
-          linkEl.addEventListener("click", async (event) => {
-            event.preventDefault();
-            const targetUrl = linkEl.getAttribute("href") || "#";
+    document.addEventListener("DOMContentLoaded", () => {
+      const pricingLinks = document.querySelectorAll("a[data-plan]");
 
-            try {
-              await logPricingClick(linkEl);
-            } catch (e) {
-              console.error(e);
-            } finally {
-              window.location.href = targetUrl;
-            }
-          });
+      pricingLinks.forEach((linkEl) => {
+        linkEl.addEventListener("click", async (event) => {
+          event.preventDefault();
+          const targetUrl = linkEl.getAttribute("href") || "#";
+
+          try {
+            await logPricingClick(linkEl);
+          } catch (e) {
+            console.error(e);
+          } finally {
+            window.location.href = targetUrl;
+          }
         });
       });
-    </script>
+    });
+  </script>
 </body>
 </html>
